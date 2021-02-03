@@ -8,14 +8,15 @@ export default class MyComponent extends React.Component {
         }
     }
 
-    toggleIsShwon = () => this.setState(({ isShown }) => ({ isShown: !isShown }));
+    toggleIsShown = () => this.setState(({ isShown }) => ({ isShown: !isShown }));
 
     render() {
         const { isShown } = this.state;
         return (
             <div>
-                <button onClick={this.toggleIsShwon}>Toggle</button>
-                <div>Text goes here</div>
+                <button onClick={this.toggleIsShown}>Toggle</button>
+                { isShown && <div>Text goes here</div> }
+                {/* edit the above text to show the div conditionally */}
             </div>
         )
     }
